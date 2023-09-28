@@ -2,7 +2,7 @@
   "name": "restaurant-page",
   "version": "1.0.0",
   "description": "A example restaurant web page rendered entirely in Javascript and styled with CSS",
-  "main": "index.js",
+  "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
