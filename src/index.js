@@ -4,4 +4,10 @@ const component = () => {
     return element;
 }
 
-document.body.appendChild(component());
+const contentContainer = (() => {
+    const container = document.createElement("div");
+    container.id = "content";
+    return container;
+})();
+
+document.body.appendChild(contentContainer);
