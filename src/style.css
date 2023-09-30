@@ -14,9 +14,14 @@ body {
 }
 
 header {
-    display: flex;
+    flex: 1;
 }
 
-.landing-icon {
+nav {
+    display: flex;
+    background-color: green;
+}
+
+nav > div:first-child {
     margin-right: auto;
 }
