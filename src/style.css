@@ -1,4 +1,5 @@
 html {
+    height:  100%; /* temp value */
     box-sizing: border-box;
 }
 
@@ -9,6 +10,7 @@ html {
 }
 
 body {
+    height: 100%; /* temp value */
     display: flex;
     justify-content: center;
 }
@@ -18,10 +20,12 @@ header {
 }
 
 nav {
+    height: 200px; /* temp value */
     display: flex;
     background-color: green;
 }
 
 nav > div:first-child {
     margin-right: auto;
+    width: 200px; /* temp value */
 }
