@@ -57,7 +57,11 @@ const navBar = (() => {
 
 const landingPage = (() => {
 
-    return;
+    const render = () => {
+        document.body.appendChild(base.main);
+    }
+
+    return { render };
 
 })();
 
@@ -78,3 +82,4 @@ const displayController = (() => {
 })();
 
 navBar.render();
+landingPage.render();

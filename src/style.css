@@ -11,21 +11,33 @@ html {
 
 body {
     height: 100%; /* temp value */
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template: 200px 1fr / 1fr minmax(240px, 768px) 1fr; /* temp value */
+    grid-template-areas: 
+        "header header header"
+        ". main .";
+}
+
+main {
+    grid-area: main;
+    height: 100%;
+    background-color: blue;
 }
 
 header {
-    flex: 1;
+    grid-area: header;
+    display: flex;
 }
 
 nav {
-    height: 200px; /* temp value */
+    padding: 1rem;
+    flex: 1;
     display: flex;
+    align-items: center;
     background-color: green;
 }
 
 nav > div:first-child {
+    width: 100px; /* temp value */
     margin-right: auto;
-    width: 200px; /* temp value */
 }
