@@ -1,9 +1,33 @@
-const displayController = (() => {
+const base = (() => {
 
-    const _component = () => document.createElement("div");
+    const component = () => document.createElement("div");
+
+    return { component };
+
+})();
+
+const landingPage = (() => {
+
+    return;
+
+})();
+
+const menuPage = (() => {
+
+    return;
+
+})();
+
+const contactPage = (() => {
+
+    return;
+
+})();
+
+const displayController = (() => {
     
     const contentContainer = (() => {
-        const container = _component();
+        const container = base.component();
         container.id = "content";
         return container;
     })();
