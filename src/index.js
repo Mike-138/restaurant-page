@@ -3,11 +3,11 @@ import Icon from "./food.svg";
 
 const base = (() => {
 
-    const header = (() => document.createElement("header"))();
+    const header = document.createElement("header");
 
-    const nav = (() => document.createElement("nav"))();
+    const nav = document.createElement("nav");
 
-    const main = (() => document.createElement("main"))();
+    const main = document.createElement("main");
 
     const makeDiv = () => document.createElement("div");
 
@@ -58,6 +58,7 @@ const navBar = (() => {
 const landingPage = (() => {
 
     const render = () => {
+        base.main.appendChild(base.contentContainer);
         document.body.appendChild(base.main);
     }
 

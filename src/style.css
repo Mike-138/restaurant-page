@@ -7,25 +7,29 @@ html {
     margin: 0;
     padding: 0;
     box-sizing: inherit;
+    border: 1px solid black;
 }
 
 body {
-    height: 100%; /* temp value */
+    height: inherit; /* temp value */
     display: grid;
-    grid-template: 200px 1fr / 1fr minmax(240px, 768px) 1fr; /* temp value */
-    grid-template-areas: 
-        "header header header"
-        ". main .";
+    grid-template-rows: 200px 1fr;
 }
 
 main {
-    grid-area: main;
-    height: 100%;
+    height: inherit;
+    display: grid;
+    grid-template-columns: 1fr minmax(240px, 768px) 1fr; /* temp value */;
+    grid-template-areas: ". content .";
     background-color: blue;
 }
 
+#content {
+    grid-area: content;
+    height: inherit;
+}
+
 header {
-    grid-area: header;
     display: flex;
 }
 
