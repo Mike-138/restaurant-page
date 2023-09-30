@@ -1,0 +1,22 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
+header {
+    display: flex;
+}
+
+.landing-icon {
+    margin-right: auto;
+}
