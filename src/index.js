@@ -80,7 +80,13 @@ const contactPage = (() => {
 
 const displayController = (() => {
 
+    const render = () => {
+        navBar.render();
+        landingPage.render();
+    }
+
+    return { render };
+
 })();
 
-navBar.render();
-landingPage.render();
+displayController.render();
