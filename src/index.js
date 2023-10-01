@@ -27,7 +27,7 @@ const base = (() => {
 
 const navBar = (() => {
 
-    const _iconTab = (() => {
+    const _navIcon = (() => {
         const container = base.makeDiv();
         container.classList.add("nav-icon");
         const icon = new Image();
@@ -36,7 +36,7 @@ const navBar = (() => {
         return container;
     })();
 
-    const _title = (() => {
+    const _navTitle = (() => {
         const container = base.makeHeader();
         container.classList.add("nav-title");
         container.textContent = "The Food Truck";
@@ -63,7 +63,7 @@ const navBar = (() => {
     })();
 
     const render = () => {
-        base.nav.append(_iconTab, _title, _navContainer);
+        base.nav.append(_navIcon, _navTitle, _navContainer);
         base.header.appendChild(base.nav);
         document.body.appendChild(base.header);
     }
@@ -74,7 +74,35 @@ const navBar = (() => {
 
 const landingPage = (() => {
 
+    const _landingTitle = (() => {
+        const container = base.makeHeader();
+        container.textContent = "Welcome to The Food Truck!";
+        return container;
+    })();
+
+    const _truckImage = (() => {
+        const container = base.makeDiv();
+        const image = new Image();
+        image.src = Icon; // placeholder
+        container.appendChild(image);
+        return container;
+    })();
+
+    const _landingDescription = (() => {
+        const container = base.makeDiv();
+        container.textContent = (
+            `The Food Truck has been delivering delish Western pub food to its patrons since 1922.
+            Specializing in hot dogs and hamburgers, our manipulation of beef and pork product to create
+            masterful food creations has led to over a century of pleasure amonst our fans. Come try our
+            Glizzy Dog or GigaBurger today, and you'll see that we are more than just hype. We welcome all people
+            from all backgrounds at our truck, and should you impress us by devouring our Giga Googa Combo in under
+            12 minutes, we will put you on our Wall of Fame! Visit The Food Truck today!`
+        );
+        return container;
+    })();
+
     const render = () => {
+        base.contentContainer.append(_landingTitle, _truckImage, _landingDescription);
         base.main.appendChild(base.contentContainer);
         document.body.appendChild(base.main);
     }

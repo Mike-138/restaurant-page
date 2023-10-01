@@ -10,6 +10,10 @@ html {
     border: 1px solid black;
 }
 
+img {
+    display: block; /* Removes whitespace from button of images */
+}
+
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     height: inherit; /* temp value */
@@ -48,7 +52,6 @@ nav {
 }
 
 .nav-icon {
-    height: 4em; /* temp value */
     width: 4em; /* temp value */
 }
 
