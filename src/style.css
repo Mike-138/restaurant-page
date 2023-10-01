@@ -1,3 +1,7 @@
+:root {
+    --nav-gutter: 4em;
+}
+
 html {
     height:  100%; /* temp value */
     box-sizing: border-box;
@@ -42,17 +46,17 @@ header {
 nav {
     font-size: 2rem;
     text-transform: uppercase;
-    padding: 1em;
+    padding: 0 1em;
     flex: 1;
     display: grid;
     grid-template-columns: 1fr minmax(240px, 768px) 1fr; /* temp value */;
-    gap: 0.25em;
+    gap: 0.5em;
     align-items: center;
     background-color: green;
 }
 
 .nav-icon {
-    width: 4em; /* temp value */
+    width: var(--nav-gutter);
 }
 
 .nav-title {
@@ -60,6 +64,7 @@ nav {
 }
 
 .nav-buttons {
+    min-width: var(--nav-gutter); /* must equal nav icon width to keep nav symmetrical on shrink */
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
