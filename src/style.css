@@ -11,6 +11,7 @@ html {
 }
 
 body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     height: inherit; /* temp value */
     display: grid;
     grid-template-rows: 200px 1fr;
@@ -27,6 +28,7 @@ main {
 #content {
     grid-area: content;
     height: inherit;
+    background-color: beige;
 }
 
 header {
@@ -34,14 +36,29 @@ header {
 }
 
 nav {
-    padding: 1rem;
+    font-size: 2rem;
+    text-transform: uppercase;
+    padding: 1em;
     flex: 1;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr minmax(240px, 768px) 1fr; /* temp value */;
+    gap: 0.25em;
     align-items: center;
     background-color: green;
 }
 
-nav > div:first-child {
-    width: 100px; /* temp value */
-    margin-right: auto;
+.nav-icon {
+    height: 4em; /* temp value */
+    width: 4em; /* temp value */
+}
+
+.nav-title {
+    text-align: center;
+}
+
+.nav-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.25em;
 }

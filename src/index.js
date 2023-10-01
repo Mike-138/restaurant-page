@@ -11,6 +11,8 @@ const base = (() => {
 
     const makeDiv = () => document.createElement("div");
 
+    const makeHeader = () => document.createElement("h1");
+
     const contentContainer = (() => {
 
         const container = makeDiv();
@@ -19,7 +21,7 @@ const base = (() => {
 
     })();
 
-    return {  header, nav, main, contentContainer, makeDiv };
+    return {  header, nav, main, contentContainer, makeDiv, makeHeader };
 
 })();
 
@@ -27,9 +29,17 @@ const navBar = (() => {
 
     const _iconTab = (() => {
         const container = base.makeDiv();
+        container.classList.add("nav-icon");
         const icon = new Image();
         icon.src = Icon;
         container.appendChild(icon);
+        return container;
+    })();
+
+    const _title = (() => {
+        const container = base.makeHeader();
+        container.classList.add("nav-title");
+        container.textContent = "The Food Truck";
         return container;
     })();
 
@@ -45,8 +55,15 @@ const navBar = (() => {
         return container;
     })();
 
+    const _navContainer = (() => {
+        const container = base.makeDiv();
+        container.classList.add("nav-buttons");
+        container.append(_menuTab, _contactTab);
+        return container;
+    })();
+
     const render = () => {
-        base.nav.append(_iconTab, _menuTab, _contactTab);
+        base.nav.append(_iconTab, _title, _navContainer);
         base.header.appendChild(base.nav);
         document.body.appendChild(base.header);
     }
