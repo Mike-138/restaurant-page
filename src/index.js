@@ -131,7 +131,48 @@ const menuPage = (() => {
 
 const contactPage = (() => {
 
-    return;
+    const _contactNumberPrompt = (() => {
+        const container = base.makeHeader();
+        container.classList.add("contact-number-prompt");
+        container.textContent = "Give us a call at:";
+        return container;
+    })();
+
+    const _contactNumber = (() => {
+        const container = base.makeHeader();
+        container.classList.add("contact-number");
+        container.textContent = "000-000-0000";
+        return container;
+    })();
+
+    const _contactEmailPrompt = (() => {
+        const container = base.Para();
+        container.classList.add("contact-email-prompt");
+        container.textContent = "Or email us at:";
+        return container;
+    })();
+
+    const _contactEmail = (() => {
+        const container = base.makeHeader();
+        container.classList.add("contact-email");
+        container.textContent = "datruck@food.com";
+        return container;
+    })();
+
+    const _contactContainer = (() => {
+        const container = base.makeDiv();
+        container.classList.add("contact-container");
+        container.append(_contactNumberPrompt, _contactNumber, _contactEmailPrompt, _contactEmail);
+        return container;
+    })();
+
+    const render = () => {
+        base.contentContainer.append(_contactContainer);
+        base.main.appendChild(base.contentContainer);
+        document.body.appendChild(base.main);
+    }
+
+    return { render };
 
 })();
 
