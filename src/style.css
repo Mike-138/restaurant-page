@@ -18,25 +18,15 @@ img {
     display: block; /* Removes whitespace from button of images */
 }
 
+p {
+    line-height: 1.5;
+}
+
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     height: inherit; /* temp value */
     display: grid;
     grid-template-rows: 200px 1fr;
-}
-
-main {
-    height: inherit;
-    display: grid;
-    grid-template-columns: 1fr minmax(240px, 768px) 1fr; /* temp value */;
-    grid-template-areas: ". content .";
-    background-color: blue;
-}
-
-#content {
-    grid-area: content;
-    height: inherit;
-    background-color: beige;
 }
 
 header {
@@ -69,4 +59,35 @@ nav {
     flex-wrap: wrap;
     justify-content: center;
     gap: 0.25em;
+}
+
+main {
+    height: inherit;
+    display: grid;
+    grid-template-columns: 1fr minmax(240px, 768px) 1fr; /* temp value */;
+    grid-template-areas: ". content .";
+    background-color: blue;
+}
+
+#content {
+    grid-area: content;
+    font-size: 1rem;
+    height: inherit;
+    padding: 1em;
+    background-color: beige;
+}
+
+.landing-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    align-items: center;
+}
+
+.landing-image {
+    width: 16em;
+}
+
+.landing-description {
+    font-size: 1.25em;
 }

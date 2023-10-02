@@ -13,6 +13,8 @@ const base = (() => {
 
     const makeHeader = () => document.createElement("h1");
 
+    const makePara = () => document.createElement("p");
+
     const contentContainer = (() => {
 
         const container = makeDiv();
@@ -21,7 +23,7 @@ const base = (() => {
 
     })();
 
-    return {  header, nav, main, contentContainer, makeDiv, makeHeader };
+    return {  header, nav, main, contentContainer, makeDiv, makeHeader, makePara };
 
 })();
 
@@ -76,12 +78,14 @@ const landingPage = (() => {
 
     const _landingTitle = (() => {
         const container = base.makeHeader();
+        container.classList.add("landing-title");
         container.textContent = "Welcome to The Food Truck!";
         return container;
     })();
 
     const _truckImage = (() => {
         const container = base.makeDiv();
+        container.classList.add("landing-image");
         const image = new Image();
         image.src = Icon; // placeholder
         container.appendChild(image);
@@ -89,7 +93,8 @@ const landingPage = (() => {
     })();
 
     const _landingDescription = (() => {
-        const container = base.makeDiv();
+        const container = base.makePara();
+        container.classList.add("landing-description");
         container.textContent = (
             `The Food Truck has been delivering delish Western pub food to its patrons since 1922.
             Specializing in hot dogs and hamburgers, our manipulation of beef and pork product to create
@@ -101,8 +106,15 @@ const landingPage = (() => {
         return container;
     })();
 
+    const _landingContainer = (() => {
+        const container = base.makeDiv();
+        container.classList.add("landing-container");
+        container.append(_landingTitle, _truckImage, _landingDescription);
+        return container;
+    })();
+
     const render = () => {
-        base.contentContainer.append(_landingTitle, _truckImage, _landingDescription);
+        base.contentContainer.append(_landingContainer);
         base.main.appendChild(base.contentContainer);
         document.body.appendChild(base.main);
     }
