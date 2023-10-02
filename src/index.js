@@ -29,7 +29,7 @@ const base = (() => {
 
 const navBar = (() => {
 
-    const _navIcon = (() => {
+    const navIcon = (() => {
         const container = base.makeDiv();
         container.classList.add("nav-icon");
         const icon = new Image();
@@ -45,13 +45,13 @@ const navBar = (() => {
         return container;
     })();
 
-    const _menuTab = (() => {
+    const menuTab = (() => {
         const container = base.makeDiv();
         container.textContent = "Menu";
         return container;
     })();
 
-    const _contactTab = (() => {
+    const contactTab = (() => {
         const container = base.makeDiv();
         container.textContent = "Contact";
         return container;
@@ -60,15 +60,15 @@ const navBar = (() => {
     const _navButtons = (() => {
         const container = base.makeDiv();
         container.classList.add("nav-buttons");
-        container.append(_menuTab, _contactTab);
+        container.append(menuTab, contactTab);
         return container;
     })();
 
     const render = () => {
-        base.nav.append(_navIcon, _navTitle, _navButtons);
+        base.nav.append(navIcon, _navTitle, _navButtons);
     }
 
-    return { render };
+    return { navIcon, menuTab, contactTab, render };
 
 })();
 
@@ -196,6 +196,10 @@ const displayController = (() => {
         landingPage.render();
         _renderMain();
     }
+
+    navBar.navIcon.addEventListener("click", landingPage.render);
+
+    navBar.contactTab.addEventListener("click", contactPage.render);
 
     return { render };
 
