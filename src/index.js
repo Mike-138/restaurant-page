@@ -57,7 +57,7 @@ const navBar = (() => {
         return container;
     })();
 
-    const _navContainer = (() => {
+    const _navButtons = (() => {
         const container = base.makeDiv();
         container.classList.add("nav-buttons");
         container.append(_menuTab, _contactTab);
@@ -65,9 +65,7 @@ const navBar = (() => {
     })();
 
     const render = () => {
-        base.nav.append(_navIcon, _navTitle, _navContainer);
-        base.header.appendChild(base.nav);
-        document.body.appendChild(base.header);
+        base.nav.append(_navIcon, _navTitle, _navButtons);
     }
 
     return { render };
@@ -114,9 +112,7 @@ const landingPage = (() => {
     })();
 
     const render = () => {
-        base.contentContainer.append(_landingContainer);
-        base.main.appendChild(base.contentContainer);
-        document.body.appendChild(base.main);
+        base.contentContainer.replaceChildren(_landingContainer);
     }
 
     return { render };
@@ -146,7 +142,7 @@ const contactPage = (() => {
     })();
 
     const _contactEmailPrompt = (() => {
-        const container = base.Para();
+        const container = base.makePara();
         container.classList.add("contact-email-prompt");
         container.textContent = "Or email us at:";
         return container;
@@ -167,9 +163,7 @@ const contactPage = (() => {
     })();
 
     const render = () => {
-        base.contentContainer.append(_contactContainer);
-        base.main.appendChild(base.contentContainer);
-        document.body.appendChild(base.main);
+        base.contentContainer.replaceChildren(_contactContainer);
     }
 
     return { render };
@@ -178,9 +172,29 @@ const contactPage = (() => {
 
 const displayController = (() => {
 
-    const render = () => {
+    const _setNav = () => {
         navBar.render();
+        base.header.appendChild(base.nav);
+    }
+
+    const _setHeader = () => {
+        document.body.appendChild(base.header);
+    }
+
+    const _renderHeader = () => {
+        _setNav();
+        _setHeader();
+    }
+
+    const _renderMain = () => {
+        base.main.appendChild(base.contentContainer);
+        document.body.appendChild(base.main);
+    }
+
+    const render = () => {
+        _renderHeader();
         landingPage.render();
+        _renderMain();
     }
 
     return { render };
