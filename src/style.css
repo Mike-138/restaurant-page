@@ -11,7 +11,6 @@ html {
     margin: 0;
     padding: 0;
     box-sizing: inherit;
-    border: 1px solid black;
 }
 
 img {
@@ -39,7 +38,7 @@ nav {
     padding: 0 1em;
     flex: 1;
     display: grid;
-    grid-template-columns: 1fr minmax(240px, 768px) 1fr; /* temp value */;
+    grid-template-columns: 1fr minmax(240px, 1080px) 1fr; /* temp value */;
     gap: 0.5em;
     align-items: center;
     background-color: green;
@@ -64,7 +63,7 @@ nav {
 main {
     height: inherit;
     display: grid;
-    grid-template-columns: 1fr minmax(240px, 768px) 1fr; /* temp value */;
+    grid-template-columns: 1fr minmax(240px, 1080px) 1fr; /* temp value */;
     grid-template-areas: ". content .";
     background-color: blue;
 }
@@ -94,11 +93,30 @@ main {
 
 .menu-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
+    gap: 1em;
 }
 
 .menu-item {
-    display: grid;
+    background: white;
+}
+
+.menu-item-name {
+    position: relative;
+    height: 2.5em;
+    display: flex;
+    align-items: flex-end;
+}
+
+.menu-item-name::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    border: 1px solid red;
+}
+
+.menu-item-price::before {
+    content: "$";
 }
 
 .contact-container {

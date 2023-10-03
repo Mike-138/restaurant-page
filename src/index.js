@@ -126,15 +126,19 @@ const menuPage = (() => {
     const _makeMenuItem = (name, price, image, description) => {
 
         const itemName = base.makeHeader();
+        itemName.classList.add("menu-item-name");
         itemName.textContent = name;
 
         const itemPrice = base.makeHeader();
+        itemPrice.classList.add("menu-item-price");
         itemPrice.textContent = price;
 
         const itemImage = new Image();
+        itemImage.classList.add("menu-item-image");
         itemImage.src = image;
 
         const itemDescription = base.makePara();
+        itemDescription.classList.add("menu-item-description");
         itemDescription.textContent = description;
 
         const container = base.makeDiv();
