@@ -1,9 +1,21 @@
 :root {
+    font-size: 10px;
     --nav-gutter: 4em;
 }
 
+@media only screen and (min-width: 400px) {
+    :root {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    :root {
+        font-size: 16px;
+    }
+}
+
 html {
-    height:  100%; /* temp value */
     box-sizing: border-box;
 }
 
@@ -23,7 +35,7 @@ p {
 
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    height: inherit; /* temp value */
+    min-height: 100vh;
     display: grid;
     grid-template-rows: 200px 1fr;
 }
@@ -38,7 +50,7 @@ nav {
     padding: 0 1em;
     flex: 1;
     display: grid;
-    grid-template-columns: 1fr minmax(240px, 1080px) 1fr; /* temp value */;
+    grid-template-columns: 1fr minmax(144px, 1080px) 1fr; /* temp value */;
     gap: 0.5em;
     align-items: center;
     background-color: green;
@@ -63,7 +75,7 @@ nav {
 main {
     height: inherit;
     display: grid;
-    grid-template-columns: 1fr minmax(240px, 1080px) 1fr; /* temp value */;
+    grid-template-columns: 1fr minmax(144px, 1080px) 1fr; /* temp value */;
     grid-template-areas: ". content .";
     background-color: blue;
 }
@@ -120,6 +132,7 @@ main {
 }
 
 .contact-container {
+    font-size: 1.5em;
     height: inherit;
     display: grid;
     place-content: center;
@@ -128,7 +141,7 @@ main {
 .contact-grid {
     display: grid;
     grid-template-columns: auto 1fr;
-    gap: 0.25em;
+    gap: 0.5em;
 }
 
 .contact-grid > *:nth-child(odd) {
