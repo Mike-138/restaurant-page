@@ -149,16 +149,23 @@ const contactPage = (() => {
     })();
 
     const _contactEmail = (() => {
-        const container = base.makeHeader();
+        const container = base.makePara();
         container.classList.add("contact-email");
         container.textContent = "datruck@food.com";
+        return container;
+    })();
+
+    const _contactGrid = (() => {
+        const container = base.makeDiv();
+        container.classList.add("contact-grid");
+        container.append(_contactNumberPrompt, _contactNumber, _contactEmailPrompt, _contactEmail);
         return container;
     })();
 
     const _contactContainer = (() => {
         const container = base.makeDiv();
         container.classList.add("contact-container");
-        container.append(_contactNumberPrompt, _contactNumber, _contactEmailPrompt, _contactEmail);
+        container.append(_contactGrid);
         return container;
     })();
 

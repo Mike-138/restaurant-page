@@ -91,3 +91,23 @@ main {
 .landing-description {
     font-size: 1.25em;
 }
+
+.contact-container {
+    height: inherit;
+    display: grid;
+    place-content: center;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.25em;
+}
+
+.contact-grid > *:nth-child(odd) {
+    text-align: right;
+}
+
+.contact-email {
+    font-weight: bold;
+}
