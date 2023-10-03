@@ -73,7 +73,6 @@ nav {
 }
 
 main {
-    height: inherit;
     display: grid;
     grid-template-columns: 1fr minmax(144px, 1080px) 1fr; /* temp value */;
     grid-template-areas: ". content .";
@@ -83,7 +82,6 @@ main {
 #content {
     grid-area: content;
     font-size: 1rem;
-    height: inherit;
     padding: 1em;
     background-color: beige;
 }
@@ -132,8 +130,8 @@ main {
 }
 
 .contact-container {
+    min-height: 100%;
     font-size: 1.5em;
-    height: inherit;
     display: grid;
     place-content: center;
 }
