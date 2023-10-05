@@ -1,5 +1,5 @@
-import "./style.css";
-import Icon from "./food.svg";
+import "./styles/style.css";
+import Icon from "./assets/images/food.svg";
 
 const base = (() => {
 
