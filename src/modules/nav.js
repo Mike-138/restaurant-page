@@ -1,3 +1,5 @@
+import Icon from "./assets/images/food.svg";
+
 const navBar = (() => {
 
     const navIcon = (() => {
